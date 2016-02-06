@@ -18,7 +18,6 @@
 
 
 package extreme
-//package main
 
 import (
 	"math"
@@ -90,7 +89,7 @@ func values(args []reflect.Value, f reflect.Type, rand *rand.Rand) {
 }
 
 
-// minValue returns a minimal value of a type or random value...
+// minValue returns a minimal value of type t (or random value if t is non-scalar type)
 func minValue(t reflect.Type, rand *rand.Rand) (value reflect.Value, ok bool) {
 	v := reflect.New(t).Elem()
 	switch concrete := t; concrete.Kind() {
@@ -134,7 +133,7 @@ func minValue(t reflect.Type, rand *rand.Rand) (value reflect.Value, ok bool) {
 }
 
 
-// minValue returns a minimal value of a type or random value...
+// maxValue returns a maximum value of type t (or random value if t is non-scalar type)
 func maxValue(t reflect.Type, rand *rand.Rand) (value reflect.Value, ok bool) {
 	v := reflect.New(t).Elem()
 	switch concrete := t; concrete.Kind() {
@@ -178,7 +177,7 @@ func maxValue(t reflect.Type, rand *rand.Rand) (value reflect.Value, ok bool) {
 }
 
 
-// minValue returns a minimal value of a type or random value...
+// zeroValue returns a zero value or a value close to zero type t (or random value if t is non-scalar type)
 func zeroValue(t reflect.Type, rand *rand.Rand) (value reflect.Value, ok bool) {
     zt := rndZValueType(rand)
 	v := reflect.New(t).Elem()
