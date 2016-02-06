@@ -5,8 +5,9 @@ A simple extreme values generator that can be used in combination
  with testing/quick.
  
 Example:
- 
- func TestAbs2e(t *testing.T) {
+
+
+  func TestAbs2e(t *testing.T) {
 	f := func(x int) bool {
 		return Abs2(x) >= 0       // post-condition of Abs2
 	}
